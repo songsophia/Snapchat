@@ -20,6 +20,7 @@ class ImagePickerViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     let data = Data();
+    var imageName = "default";
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.images.count
@@ -36,12 +37,18 @@ class ImagePickerViewController: UIViewController, UICollectionViewDataSource, U
         return UICollectionViewCell()
     }
 
-
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat,;h: IndexPath) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTableView" {
+            if let viewController = segue.destination as? FeedPickerViewController {
+                
+                viewController.imgName = imageName
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let imageName = data.images[indexPath.item]
-        let destination = FeedPickerViewController()
-        destination.imgName = imageName
+        imageName = data.images[indexPath.item]
         
         performSegue(withIdentifier: "toTableView", sender: self)
     }
