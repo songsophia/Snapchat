@@ -14,6 +14,8 @@
 		6BDA0FE022289A740035D08B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDA0FDF22289A740035D08B /* Data.swift */; };
 		D59D879E223832CB000740A6 /* OpenedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59D879D223832CB000740A6 /* OpenedImageViewController.swift */; };
 		D59D87A0223834C0000740A6 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59D879F223834C0000740A6 /* FeedViewController.swift */; };
+		F290D1DD22384A450032002B /* ImageFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = F290D1DC22384A450032002B /* ImageFeed.swift */; };
+		F290D1DF22384B710032002B /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F290D1DE22384B710032002B /* Snap.swift */; };
 		F2D51DF7222F342700B420CA /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D51DF6222F342700B420CA /* ImagePickerViewController.swift */; };
 		F2D51DF9222F372E00B420CA /* ImagePickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D51DF8222F372E00B420CA /* ImagePickerViewCell.swift */; };
 		F2D51DFB222F449000B420CA /* FeedPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D51DFA222F449000B420CA /* FeedPickerViewController.swift */; };
@@ -30,6 +32,8 @@
 		6BDA0FDF22289A740035D08B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		D59D879D223832CB000740A6 /* OpenedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenedImageViewController.swift; sourceTree = "<group>"; };
 		D59D879F223834C0000740A6 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		F290D1DC22384A450032002B /* ImageFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFeed.swift; sourceTree = "<group>"; };
+		F290D1DE22384B710032002B /* Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
 		F2D51DF6222F342700B420CA /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 		F2D51DF8222F372E00B420CA /* ImagePickerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewCell.swift; sourceTree = "<group>"; };
 		F2D51DFA222F449000B420CA /* FeedPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPickerViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				6BDA0FDF22289A740035D08B /* Data.swift */,
+				F290D1DC22384A450032002B /* ImageFeed.swift */,
+				F290D1DE22384B710032002B /* Snap.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,12 +176,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2D51DF9222F372E00B420CA /* ImagePickerViewCell.swift in Sources */,
+				F290D1DF22384B710032002B /* Snap.swift in Sources */,
 				F2D51DF7222F342700B420CA /* ImagePickerViewController.swift in Sources */,
 				D59D879E223832CB000740A6 /* OpenedImageViewController.swift in Sources */,
 				F2EC9AC3222F615800EE4D61 /* FeedViewCell.swift in Sources */,
 				6BDA0FE022289A740035D08B /* Data.swift in Sources */,
 				6BDA0FCE22289A3D0035D08B /* AppDelegate.swift in Sources */,
 				D59D87A0223834C0000740A6 /* FeedViewController.swift in Sources */,
+				F290D1DD22384A450032002B /* ImageFeed.swift in Sources */,
 				F2D51DFB222F449000B420CA /* FeedPickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,18 +8,38 @@
 
 import UIKit
 
-class FeedPickerViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-
+class FeedPickerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var feedTableView: UITableView!
     
     @IBOutlet weak var postingImage: UILabel!
     
-    @IBOutlet weak var feedLabel: UILabel!
+    @IBOutlet var feedDetails: UILabel!
+    
+    @IBOutlet weak var postButton: UIButton!
+    
+    @IBAction func clickPostButton(_ sender: UIButton) {
+        if (selectedImage != nil && feedDetails.text != nil) {
+            let feed = feedDetails.text!
+            
+            // creates a new "snap" containing the information needed to show it when the user opens a snap
+            let newSnap = Snap(image: selectedImage!, feed: feed);
+            print(newSnap);
+            
+            // adds the new snap to the dictionary which keeps track of all posted snaps
+            if (feedData[feed] != nil) {
+                feedData[feed]! += [newSnap]
+            }
+            feedData[feed] = [newSnap]
+        }
+    }
+    
+    var selectedImage: UIImage?;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        postingImage.text = imgName;
         
         feedTableView.delegate = self
         feedTableView.dataSource = self
@@ -27,25 +47,31 @@ class FeedPickerViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     let data = Data();
-    var imgName: String = "";
+    var imgName: String = "Post: ";
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.feeds.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "protoLabel", for: indexPath) as? FeedViewCell {
-            
-            let cellUILabel = UILabel(named: data.feeds[indexPath.item])
-            
-            cell.feedLabel.text = cellUIImage
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "prototypeCell") as? FeedViewCell {
+            cell.feedName.text = data.feeds[indexPath.row]
             return cell
         }
-        return UICollectionViewCell()
+        
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedImage = UIImage(named: data.images[indexPath.item])!
+        
+        feedDetails.text = data.feeds[indexPath.row];
+        print("Selected \(data.feeds[indexPath.row])")
     }
 
-    
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
     /*
     // MARK: - Navigation
 
