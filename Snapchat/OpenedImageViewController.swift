@@ -9,14 +9,24 @@
 import UIKit
 
 class OpenedImageViewController: UIViewController {
-
+    
+    @IBOutlet weak var OpenImage: UIImageView!
+    
+    var pickedImage = UIImage()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-
+    
+    
+    @IBAction func tapPhoto(_ sender: Any) {
+        self.performSegue(withIdentifier: "backToFeed", sender: self)
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 

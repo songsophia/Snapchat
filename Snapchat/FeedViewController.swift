@@ -10,13 +10,17 @@ import UIKit
 
 class FeedViewController: UIViewController {
 
+
+    @IBOutlet weak var UserFeed: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        UserFeed.delegate = self as? UITableViewDelegate
+        UserFeed.dataSource = self as? UITableViewDataSource
+        
         // Do any additional setup after loading the view.
     }
     
-
     /*
     // MARK: - Navigation
 
